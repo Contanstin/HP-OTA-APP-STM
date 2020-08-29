@@ -1,0 +1,106 @@
+<resources>
+    <!--公共-->
+    <string name="app_name">HP-OTA</string>
+    <string name="confirm">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="permission">Permission settings</string>
+    <string name="permission_settings">Permission settings?</string>
+    <string name="exit">Press again to exit the program!</string>
+    <string name="version_updata">Version upgrade</string>
+    <string name="updata_hint">A new version has been detected, please update it in time!</string>
+    <string name="updata">Update</string>
+    <string name="network_timeout">The network is not good, the request timed out!</string>
+    <string name="network_server_error">Server internal error, we will deal with it as soon as possible!</string>
+    <string name="network_error">Network error, please try again later!</string>
+    <string name="check_network">Please check the network connection!</string>
+    <string name="finish">Completed:</string>
+    <string name="update_progress">The software is upgrading, please wait a moment...</string>
+    <string name="version_title">Version number:</string>
+    <string name="update_old_version">Current version:</string>
+    <string name="update_new_version">Latest version:</string>
+
+    <!-- 蓝牙扫描 -->
+    <string name="devicesacn_search">Search</string>
+    <string name="devicesacn_bluetooth_not_supported">Does not support Bluetooth!</string>
+    <string name="devicesacn_content_time_out">Connection timeout, please check Bluetooth device is normal!</string>
+    <string name="devicesacn_contecting_ble">Connecting...</string>
+    <string name="devicesacn_unknown_device">Unknown device</string>
+    <string name="devicesacn_paired">Paired device</string>
+    <string name="devicesacn_new">Unpaired device</string>
+    <string name="devicesacn_no_device">No new device found</string>
+    <string name="devicesacn_choose">Select the device to be connected</string>
+    <string name="devicesacn_scaning">Finding device</string>
+    <string name="devicesacn_scan">Find device</string>
+
+    <!--登录页（网络-->
+    <string name="login_name_hint">Please enter username</string>
+    <string name="login_psw_hint">Please enter password</string>
+    <string name="login_save_psw">Save password</string>
+    <string name="login_entry">login</string>
+    <string name="login_customer_phone">Customer service phone:189-3897-3823</string>
+    <string name="login_company_name">Shenzhen Hpmont Technology Co.,Ltd.</string>
+    <string name="login_service_phone">Customer service phone:</string>
+    <string name="login_dial">Dial</string>
+    <string name="login_landing">Loading</string>
+    <string name="login_err_1">The username or password is incorrect!</string>
+    <string name="login_err_2">Exceed certained devices numbers!</string>
+    <string name="login_err_3">Parameter cannot be empty!</string>
+    <string name="login_err_4">The login is abnormal, please log in again!</string>
+    <string name="login_err_5">Login error!</string>
+    <string name="login_boot_err">Boot request error!</string>
+    <string name="login_product_err_1">The login is invalid, please log in again!</string>
+    <string name="login_product_err_2">Request parameter error!</string>
+    <string name="login_product_err_3">Product model request error!</string>
+    <string name="login_type">Communication type</string>
+    <string name="login_type_serial">Serial</string>
+    <string name="login_type_bluetooth">Bluetooth</string>
+
+    <!-- 下载页 -->
+    <string name="download_product">Model</string>
+    <string name="download_nonstandard">Software</string>
+    <string name="download_null">Empty</string>
+    <string name="download_no_product">Unauthorized product!</string>
+    <string name="download_update">Upgrade</string>
+    <string name="download_hint">
+        Use help:\n
+        *Please ensure that the Bluetooth or serial port is properly connected before upgrading.\n
+        *Please confirm the model  and version  before upgrading.\n
+        *Keep mobile phone network connection when upgrading.\n
+        *Please do not close this software when upgrading.\n
+        *Please close other software when upgrading, and try to avoid running in the background.\n
+        *Upgrade time varies from seconds to minutes, please be patient.\n\n
+        Important tips:\n
+        *It is forbidden to disconnect the connection between the machine and the mobile phone during the upgrade.\n
+        *Please do not touch the cable or move the machine when upgrading.</string>
+    <string name="download_ble_connect">Bluetooth is connected!</string>
+    <string name="download_select_pro">Please select the product model or product software!</string>
+    <string name="download_ble_disconnect">Bluetooth is not connected!</string>
+    <string name="download_discontinuing">Aborting (do not power off)...</string>
+    <string name="download_start">Do not power off during the download process!\nFile loading...</string>
+    <string name="download_hex_err_1">Login is invalid, please log in again!</string>
+    <string name="download_hex_err_2">File download limited!</string>
+    <string name="download_hex_err_3">Parameter cannot be empty!</string>
+    <string name="download_hex_err_4">File not uploaded or disabled!</string>
+    <string name="download_hex_err_5">Request error!</string>
+    <string name="download_OK">OK</string>
+    <string name="download_connect">Main board connection...</string>
+    <string name="download_check_ble">Connection failed, please power off and check the wiring and try again!</string>
+    <string name="download_check_serial">Connection failed, please power off and check the wiring and try again!</string>
+    <string name="download_download_fail">Upgrade failed, please power off and try again!</string>
+    <string name="download_loadfile_fail">File acquisition failed, please power off and try again!</string>
+    <string name="download_versioncode">System version number:</string>
+    <string name="download_erase_flash">Flash erase...</string>
+    <string name="download_unlock_fail">Unlock failed, please power off and try again!</string>
+    <string name="download_downloading">Download...</string>
+    <string name="download_success">Download is complete, you can disconnect the main board!</string>
+    <string name="download_welcome">Welcome to the HP-OTA</string>
+
+    <string name="app_title">USB Serial</string>
+    <string name="refreshing">Refreshing...</string>
+    <string name="download_serial_connect">Serial port is connected!</string>
+    <string name="download_serial_disconnect">Serial port is not connected!</string>
+    <string name="download_serial_found">Discover </string>
+    <string name="download_serial_devices"> set(s) of device</string>
+    <string name="connect">Connect </string>
+    <string name="success"> success!</string>
+</resources>

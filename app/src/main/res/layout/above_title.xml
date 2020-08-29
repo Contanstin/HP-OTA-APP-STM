@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="#40FFFFFF" >
+
+    <ImageButton
+        android:id="@+id/title_backBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="2dp"
+        android:background="@drawable/image_button"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/title_back"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/ble_state"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/title_backBtn"
+        android:src="@drawable/ble_disconnect" />
+
+    <TextView
+        android:id="@+id/title_centerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/title_searchBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/image_button"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/title_search"
+        android:visibility="gone" />
+
+</RelativeLayout>

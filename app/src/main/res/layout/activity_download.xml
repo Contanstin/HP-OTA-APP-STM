@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/XMLStyleLinearLayout"
+    android:background="@drawable/background_img">
+
+    <!-- 下载页面 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/above_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:background="@drawable/item_product"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="@string/download_product"
+                        android:textColor="@color/login_textColor"
+                        android:textSize="16dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:overlapAnchor="false"
+                        android:background="@drawable/triangle"
+                        android:id="@+id/spinner_product"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="20dp"
+                        android:popupBackground="#666666"/>
+
+                    <!--<Spinner-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:overlapAnchor="false"-->
+                        <!--android:background="@drawable/item_spinner"-->
+                        <!--android:id="@+id/spinner_product"-->
+                        <!--android:layout_marginTop="10dp"-->
+                        <!--android:layout_marginBottom="10dp"-->
+                        <!--android:layout_marginRight="20dp"-->
+                        <!--android:popupBackground="#666666"/>-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="@string/download_nonstandard"
+                        android:textColor="@color/login_textColor"
+                        android:textSize="16dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:layout_height="match_parent"
+                        android:overlapAnchor="false"
+                        android:background="@drawable/triangle"
+                        android:id="@+id/spinner_nonstandard"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="20dp"
+                        android:popupBackground="#666666"/>
+
+                    <!--<Spinner-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_weight="0.6"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:overlapAnchor="false"-->
+                        <!--android:background="@drawable/item_spinner"-->
+                        <!--android:id="@+id/spinner_nonstandard"-->
+                        <!--android:layout_marginTop="10dp"-->
+                        <!--android:layout_marginBottom="10dp"-->
+                        <!--android:layout_marginRight="20dp"-->
+                        <!--android:popupBackground="#666666"/>-->
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/stepHintText"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:singleLine="false"
+                    android:text="@string/download_hint"
+                    android:textSize="16dp"
+                    android:scrollbars="vertical"
+                    android:background="@drawable/item_download"
+                    android:textColor="@color/login_textColor"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/login_textColor"
+                    android:textSize="16dp"
+                    android:text="@string/download_welcome"
+                    android:gravity="right"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <Button
+                    android:id="@+id/updateBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:text="@string/download_update"
+                    android:textColor="@color/mybtn_selector"
+                    android:textSize="18dp"
+                    android:background="@drawable/item_mybtn" />
+
+                <Button
+                    android:id="@+id/cancelBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="0"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/cancel"
+                    android:textColor="@color/mybtn_selector"
+                    android:textSize="18dp"
+                    android:background="@drawable/item_mybtn"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

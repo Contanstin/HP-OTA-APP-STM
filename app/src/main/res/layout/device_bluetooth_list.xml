@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/item_scan">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/scan_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/login_textColor"
+                android:textSize="18dp" />
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/loadingImg"
+                style="@style/AVLoadingIndicatorView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:visibility="invisible"
+                app:indicatorColor="@color/login_textColor"
+                app:indicatorName="BallPulseIndicator" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/login_textColor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_new_devices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#40FFFFFF"
+            android:padding="5dp"
+            android:text="@string/devicesacn_paired"
+            android:textSize="15dp"
+            android:textColor="@color/login_textColor"
+            android:visibility="visible" />
+
+        <ListView
+            android:id="@+id/paired_devices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:stackFromBottom="true">
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/title_new_devices2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#40FFFFFF"
+            android:padding="5dp"
+            android:text="@string/devicesacn_new"
+            android:textSize="15dp"
+            android:textColor="@color/login_textColor"
+            android:visibility="visible" />
+
+        <ListView android:id="@+id/new_devices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stackFromBottom="true"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/devicesacn_scan"
+            android:background="@drawable/item_scan_button"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="OnCancel"
+            android:text="@string/cancel"
+            android:background="@drawable/item_scan_button"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"/>
+    </LinearLayout>
+</LinearLayout>
