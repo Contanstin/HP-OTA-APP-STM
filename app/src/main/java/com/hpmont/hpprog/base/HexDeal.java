@@ -53,25 +53,23 @@ public class HexDeal<Products>{
 //        }
 //        return true;
 //    }
-//    /**
-//     * @param products 加密的字符串
-//     * @return
-//     */
-//    public static boolean productsReload(String[] products) throws Exception {
-//        productsInfo=null;
-//        for (int i = 0; i < products.length; i++) {
-//            if (products[i].substring(0, 1).equals("*")) {
-//                String str = "";
-//
-//                str=products[i].substring(1);
-//                String item[]=str.split("/");
-//                productsInfo=item;
-//                ProductStruct productStruct=new ProductStruct(item[0],item[1],item[2],item[3],item[4]);
-//
-//            }
-//        }
-//        return true;
-//    }
+    /**
+     * @param products 加密的字符串
+     * @return
+     */
+    public static boolean productsReload(String[] products) throws Exception {
+        productsInfo=null;
+        for (int i = 0; i < products.length; i++) {
+            if (products[i].substring(0, 1).equals("*")) {
+                String str = "";
+
+                str=products[i].substring(1);
+                String item[]=str.split("/");
+                productsInfo=item;
+            }
+        }
+        return true;
+    }
     /**
      * 获取Hex文件
      *

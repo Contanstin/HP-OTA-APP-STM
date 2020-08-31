@@ -1395,7 +1395,7 @@ public class DownloadSerialActivity extends BaseActivity implements View.OnClick
                                                     }
                                                 } else {
 //                                                    if (HexDeal.binFile(hexArry) &&HexDeal.productsReload(hexArry)&& HexDeal.getHex(hexArry)) {
-                                                    if (HexDeal.getHex(hexArry)) {
+                                                    if (HexDeal.productsReload(hexArry)&&HexDeal.getHex(hexArry)) {
                                                         if (application.f_stopdownload) {
                                                             f_getHexFile = false;
                                                         } else {

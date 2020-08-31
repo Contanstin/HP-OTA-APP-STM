@@ -1456,7 +1456,7 @@ public class DownloadBluetoothActivity extends BaseActivity implements View.OnCl
                                                     }
                                                 } else {
 //                                                    if (HexDeal.binFile(hexArry) &&HexDeal.productsReload(hexArry)&& HexDeal.getHex(hexArry)) {
-                                                    if (HexDeal.getHex(hexArry)) {
+                                                    if (HexDeal.productsReload(hexArry)&&HexDeal.getHex(hexArry)) {
                                                         if (application.f_stopdownload) {
                                                             f_getHexFile = false;
                                                         } else {
