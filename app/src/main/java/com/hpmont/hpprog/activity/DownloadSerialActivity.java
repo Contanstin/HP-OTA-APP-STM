@@ -1180,8 +1180,8 @@ public class DownloadSerialActivity extends BaseActivity implements View.OnClick
 
         refreshUI_progress(10);
         refreshUI_step(getResources().getString(R.string.download_OK) + "（" + application.hexFileName + "  " + application.hexFileVersion + "）", false);
-        refreshUI_step(getResources().getString(R.string.download_connect), true);
-        refreshDialog_progress(getResources().getString(R.string.download_connect));
+        refreshUI_step(getResources().getString(R.string.downloadSTM32_connect), true);
+        refreshDialog_progress(getResources().getString(R.string.downloadSTM32_connect));
         if(!Send_Hardware()){
             exitDownload(getResources().getString(R.string.download_check_serial));
             return;

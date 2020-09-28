@@ -84,6 +84,7 @@
     <string name="download_hex_err_5">Request error!</string>
     <string name="download_OK">OK</string>
     <string name="download_connect">Main board connection...</string>
+    <string name="downloadSTM32_connect">Main board connection,please access to electricity...</string>
     <string name="download_check_ble">Connection failed, please power off and check the wiring and try again!</string>
     <string name="download_check_serial">Connection failed, please power off and check the wiring and try again!</string>
     <string name="download_download_fail">Upgrade failed, please power off and try again!</string>

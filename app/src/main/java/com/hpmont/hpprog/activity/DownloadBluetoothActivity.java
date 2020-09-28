@@ -1241,8 +1241,8 @@ public class DownloadBluetoothActivity extends BaseActivity implements View.OnCl
         }
         refreshUI_progress(10);
         refreshUI_step(getResources().getString(R.string.download_OK) + "（" + application.hexFileName + "  " + application.hexFileVersion + "）", false);
-        refreshUI_step(getResources().getString(R.string.download_connect), true);
-        refreshDialog_progress(getResources().getString(R.string.download_connect));
+        refreshUI_step(getResources().getString(R.string.downloadSTM32_connect), true);
+        refreshDialog_progress(getResources().getString(R.string.downloadSTM32_connect));
         refreshUI_progress(13);
         if (!Send_Hardware()) {
             exitDownload(getResources().getString(R.string.download_download_fail));

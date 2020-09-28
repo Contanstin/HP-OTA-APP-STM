@@ -84,6 +84,7 @@
     <string name="download_hex_err_5">请求出错！</string>
     <string name="download_OK">OK</string>
     <string name="download_connect">主板连接...</string>
+    <string name="downloadSTM32_connect">主板连接,請上電...</string>
     <string name="download_check_ble">连接失败，请断电检查蓝牙连接后重试！</string>
     <string name="download_check_serial">连接失败，请断电检查串口连接后重试！</string>
     <string name="download_download_fail">升级失败，请断电重试！</string>
