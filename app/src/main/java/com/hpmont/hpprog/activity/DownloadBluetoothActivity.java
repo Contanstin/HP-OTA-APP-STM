@@ -1318,7 +1318,7 @@ public class DownloadBluetoothActivity extends BaseActivity implements View.OnCl
                 e.printStackTrace();
             }
             long nowTime = System.currentTimeMillis();
-            if (nowTime > (startTime + 10000)) {
+            if (nowTime > (startTime + 60000)) {
                 return false;
             }
             if (f_error) {

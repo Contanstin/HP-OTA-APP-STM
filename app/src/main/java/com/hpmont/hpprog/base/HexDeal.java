@@ -235,72 +235,79 @@ public class HexDeal<Products>{
                 hexstruckkey.setData(CommonUtil.secretKeyToByte(application.secretKeyStr));
                 hexStructs.add(0, hexstruckkey);
             } else if (hexLines[i].substring(0, 1).equals("+")) {
-                HexStruct hexStruct = new HexStruct();
-                long rd = Long.parseLong(hexLines[i].substring(1, 9), 16);
-                Log.d("hexReload", hexLines[i].substring(9, 17));
-                long ad = Long.parseLong(hexLines[i].substring(9, 17), 16);
-                byte length = (byte) Integer.parseInt(hexLines[i].substring(17, 19), 16);
-                byte[] recordLength = new byte[1];
-                recordLength[0] = (byte) ((length ^ rd) & 0xFF);
-                hexStruct.setRecordLength(recordLength);
-                String tempad = String.format("%08x"/*转化为16进制*/, (rd ^ ad)).toUpperCase/*将字符串小写字符转换为大写*/();
-                byte[] tempaddr = new byte[4];
-                tempaddr[0] = (byte) Integer.parseInt(tempad.substring(0, 2), 16);
-                tempaddr[1] = (byte) Integer.parseInt(tempad.substring(2, 4), 16);
-                tempaddr[2] = (byte) Integer.parseInt(tempad.substring(4, 6), 16);
-                tempaddr[3] = (byte) Integer.parseInt(tempad.substring(6, 8), 16);
-                hexStruct.setAddr(tempaddr);
-                String data = hexLines[i].substring(19, 19 + recordLength[0] * 4);
-                if (data.length() < 8) {
-                    String tempStr = data;
-                    long last = Long.parseLong(tempStr, 16);
-                    long bit;
-                    if (data.length() == 6) {
-                        bit = 0xFFFFFF;
-                    } else if (data.length() == 4) {
-                        bit = 0xFFFF;
-                    } else if (data.length() == 2) {
-                        bit = 0xFF;
-                    } else {
-                        bit = 0xFFFFFFFF;
-                    }
-                    long temp = last ^ (rd & bit);
-                    String xor = String.format("%08x", temp).toUpperCase();
-                    StringBuffer buffer = new StringBuffer(data);
-                    buffer.delete(0, data.length());
-                    buffer.append(xor);
-                    data = buffer.toString();
-                } else {
-                    String tempStr = data.substring(data.length() - 8, data.length());
-                    long last = Long.parseLong(tempStr, 16);
-                    long temp = last ^ rd;
-                    String xor = String.format("%08x", temp).toUpperCase();
-                    StringBuffer buffer = new StringBuffer(data);
-                    buffer.delete(data.length() - 8, data.length());
-                    buffer.append(xor);
-                    data = buffer.toString();
-                }
-                if (application.chipType == 1) {
-                    StringBuilder str = new StringBuilder();
-                    for (int j = 0; j < data.length(); j += 4) {
-                        long tmp = Long.parseLong(data.substring(j, j + 4), 16);
-                        if (tmp != 0 && tmp != 0x5B38) {
-                            tmp ^= 0x5B38;
+
+                    HexStruct hexStruct = new HexStruct();
+                    long rd = Long.parseLong(hexLines[i].substring(1, 9), 16);
+                    Log.d("hexReload", hexLines[i].substring(9, 17));
+                    long ad = Long.parseLong(hexLines[i].substring(9, 17), 16);
+                    byte length = (byte) Integer.parseInt(hexLines[i].substring(17, 19), 16);
+                    byte[] recordLength = new byte[1];
+                    recordLength[0] = (byte) ((length ^ rd) & 0xFF);
+                    hexStruct.setRecordLength(recordLength);
+                    String tempad = String.format("%08x"/*转化为16进制*/, (rd ^ ad)).toUpperCase/*将字符串小写字符转换为大写*/();
+                    byte[] tempaddr = new byte[4];
+                    tempaddr[0] = (byte) Integer.parseInt(tempad.substring(0, 2), 16);
+                    tempaddr[1] = (byte) Integer.parseInt(tempad.substring(2, 4), 16);
+                    tempaddr[2] = (byte) Integer.parseInt(tempad.substring(4, 6), 16);
+                    tempaddr[3] = (byte) Integer.parseInt(tempad.substring(6, 8), 16);
+                    hexStruct.setAddr(tempaddr);
+                    String data = hexLines[i].substring(19, 19 + recordLength[0] * 4);
+                    if (data.length() < 8) {
+                        String tempStr = data;
+                        long last = Long.parseLong(tempStr, 16);
+                        long bit;
+                        if (data.length() == 6) {
+                            bit = 0xFFFFFF;
+                        } else if (data.length() == 4) {
+                            bit = 0xFFFF;
+                        } else if (data.length() == 2) {
+                            bit = 0xFF;
+                        } else {
+                            bit = 0xFFFFFFFF;
                         }
-                        String s = String.format("%04x", tmp).toUpperCase();
-                        str.append(s);
+                        long temp = last ^ (rd & bit);
+                        String tmp1="%0"+data.length()+"x";
+                        String xor = String.format(tmp1, temp).toUpperCase();
+                        StringBuffer buffer = new StringBuffer(data);
+                        buffer.delete(0, data.length());
+                        buffer.append(xor);
+                        data = buffer.toString();
+                    } else {
+                        String tempStr = data.substring(data.length() - 8, data.length());
+                        long last = Long.parseLong(tempStr, 16);
+                        long temp = last ^ rd;
+                        String xor = String.format("%08x", temp).toUpperCase();
+                        StringBuffer buffer = new StringBuffer(data);
+                        buffer.delete(data.length() - 8, data.length());
+                        buffer.append(xor);
+                        data = buffer.toString();
                     }
-                    data = str.toString();
-                }
-                byte[] tempdata = new byte[data.length() / 2];
-                for (int j = 0; j < data.length(); j += 2) {
-                    tempdata[j / 2] = (byte) Integer.parseInt/*转化为整形*/(data.substring(j, j + 2), 16);
-                }
-                hexStruct.setData(tempdata);
-                hexStructs.add(hexStruct);
+                    if (application.chipType == 1) {
+                        StringBuilder str = new StringBuilder();
+                        for (int j = 0; j < data.length(); j += 4) {
+                            long tmp = Long.parseLong(data.substring(j, j + 4), 16);
+                            if (tmp != 0 && tmp != 0x5B38) {
+                                tmp ^= 0x5B38;
+                            }
+                            String s = String.format("%04x", tmp).toUpperCase();
+                            str.append(s);
+                        }
+                        data = str.toString();
+                    }
+
+                    byte[] tempdata = new byte[data.length() / 2];
+                    for (int j = 0; j < data.length(); j += 2) {
+                        tempdata[j / 2] = (byte) Integer.parseInt(data.substring(j, j + 2), 16);
+                    }
+
+                    hexStruct.setData(tempdata);
+                    hexStructs.add(hexStruct);
+
             }
         }
+
             return hexStructs;
+
         }
 
     public static long[] FlashRoom(List<HexStruct> hex)

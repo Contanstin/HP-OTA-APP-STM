@@ -1258,7 +1258,7 @@ public class DownloadSerialActivity extends BaseActivity implements View.OnClick
             }
             sendOrder_STM(bytes, Config.Hardware);
             long nowTime = System.currentTimeMillis();
-            if (nowTime > (startTime + 10000)) {
+            if (nowTime > (startTime + 60000)) {
                 return false;
             }
             if (f_error) {
@@ -1499,6 +1499,15 @@ public class DownloadSerialActivity extends BaseActivity implements View.OnClick
         byte[] type = new byte[1];
         type[0] = dataType;
         byte[] data = CommonUtil.mergerArray(type, txBuffer);
+        String s=byteHead[0]+" "+byteHead[1]+" "+dataType+" ";
+        for(int i=0;i<data.length;i++){
+            if(data[i]>0){
+                s+=(data[i])+" ";
+            }else {
+                s+=(data[i]+256)+" ";
+            }
+        }
+        System.out.println(s);
         if (f_password) {
             data = CommonUtil.dataEncryption(data, application.A1, application.A2, application.B);
         }
@@ -1514,6 +1523,7 @@ public class DownloadSerialActivity extends BaseActivity implements View.OnClick
         byteCRC[1] = (byte)(crcCalc >> 8);
         byte[] bytes = CommonUtil.mergerArray(byteNoCRC, byteCRC);
         sendBytes(bytes);
+
     }
 
     /**
