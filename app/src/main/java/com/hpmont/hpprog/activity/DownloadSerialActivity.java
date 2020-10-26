@@ -1406,6 +1406,13 @@ public class DownloadSerialActivity extends BaseActivity implements View.OnClick
                                             } catch (Exception e) {
                                                 e.printStackTrace();
                                             }
+                                        }else{
+                                            if(application.f_stopdownload){
+                                                f_getHexFile = false;
+                                            }
+                                            else{
+                                                f_getHexFile = true;
+                                            }
                                         }
 
                                         break;
@@ -1705,7 +1712,7 @@ public class DownloadSerialActivity extends BaseActivity implements View.OnClick
                 e.printStackTrace();
             }
             long nowTime = System.currentTimeMillis();
-            if(nowTime > (startTime + 1000)){
+            if(nowTime > (startTime + 10000)){
                 return false;
             }
             if(f_error){
