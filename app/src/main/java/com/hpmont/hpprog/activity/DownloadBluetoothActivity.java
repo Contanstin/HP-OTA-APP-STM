@@ -1467,6 +1467,13 @@ public class DownloadBluetoothActivity extends BaseActivity implements View.OnCl
                                             } catch (Exception e) {
                                                 e.printStackTrace();
                                             }
+                                        }else{
+                                            if(application.f_stopdownload){
+                                                f_getHexFile = false;
+                                            }
+                                            else{
+                                                f_getHexFile = true;
+                                            }
                                         }
 
                                         break;
