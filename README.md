@@ -5,7 +5,7 @@ HP-OTA-APP使用说明
  
 1.	手机安装HP-OTA-APP
 点击手机上HP-OTA-APP进入APP登陆界面
-
+https://github.com/Contanstin/HP-OTA-APP-STM/blob/master/Images/%E6%89%8B%E6%9C%BA%E9%A1%B5%E9%9D%A2.jpg
  
 
 2.	登录界面
